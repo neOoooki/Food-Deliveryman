@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshProUGUI: {fileID: 488256227}
+  eventSystem: {fileID: 1381626414}
   typeStyle: {fileID: 488256226}
 --- !u!1 &488256222
 GameObject:
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6946244b20623448860d17c07f58d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeDelay: 0.2
+  typeDelay: 0.1
 --- !u!114 &488256227
 MonoBehaviour:
   m_ObjectHideFlags: 0

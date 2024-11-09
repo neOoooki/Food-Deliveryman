@@ -15,14 +15,25 @@ public class TypeStyle : MonoBehaviour
     private float m_timer;
     private bool m_isTyping;
 
-    public void TypeOut(string str)
+    public void StartType(string str)
     {
+        m_isTyping = true;
         m_targetStr = str;
         m_targetLength = str.Length;
         m_currLength = 0;
         m_timer = 0;
-        m_isTyping = true;
     }
+    public void EndType()
+    {
+        m_isTyping = false;
+        textMeshProUGUI.text = m_targetStr;
+    }
+
+    public bool IsTyping()
+    {
+        return m_isTyping;
+    }
+
 
     private void Start()
     {
@@ -40,10 +51,9 @@ public class TypeStyle : MonoBehaviour
                 m_timer += Time.fixedDeltaTime;
                 textMeshProUGUI.text = m_targetStr.Substring(0, m_currLength) + "_";
                 ++m_currLength;
-                if (m_currLength >= m_targetLength)
+                if (m_currLength > m_targetLength)
                 {
-                    textMeshProUGUI.text = m_targetStr;
-                    m_isTyping = false;
+                    EndType();
                 }
             }
         }
